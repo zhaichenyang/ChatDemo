@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/et_host"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="http://10.31.61.3:8080"/>
+
+        <Button
+            android:id="@+id/bt_confirm"
+            android:layout_width="60dp"
+            android:layout_height="45dp"
+            android:text="确定"
+            />
+
+        <LinearLayout
+            android:id="@+id/l_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="2dp"
+                android:scrollbars="vertical"
+                android:singleLine="false"
+                android:text="" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/bt_getServiceInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="10dp"
+                    android:text="获取服务器配置" />
+
+                <Button
+                    android:id="@+id/bt_login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+
+                    android:layout_marginRight="10dp"
+                    android:text="登录" />
+
+                <Button
+                    android:id="@+id/bt_loginOut"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="10dp"
+                    android:text="登出" />
+
+                <Button
+                    android:id="@+id/bt_uploadFile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="上传" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/bt_sendTextMsg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="10dp"
+                    android:text="发送文字消息" />
+
+
+                <Button
+                    android:id="@+id/bt_getQueueInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="10dp"
+                    android:text="获取排队信息" />
+
+                <Button
+                    android:id="@+id/bt_cancelQueue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text=" 取消排队" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/bt_recordCall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="10dp"
+                    android:text="记录语音视频通话信息" />
+
+                <Button
+                    android:id="@+id/bt_updateCall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="更新语音视频通话时长" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/bt_Satisfaction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="10dp"
+                    android:text="满意度调查提交接口" />
+
+                <Button
+                    android:id="@+id/bt_querySessionById"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text=" 根据用户id查询会话记录" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/bt_queryChatBySno"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="10dp"
+                    android:text="根据接入流水号查询聊天记录" />
+
+                <Button
+                    android:id="@+id/bt_querySeatStatue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text=" 查询坐席状态信息" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/bt_submitUserSettingInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="10dp"
+                    android:text="用户配置信息提交" />
+
+                <Button
+                    android:id="@+id/bt_queryUserSettingInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text=" 用户配置信息查询" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:visibility="gone"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/bt_audioCall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="10dp"
+                    android:text="语音呼叫" />
+
+                <Button
+                    android:id="@+id/bt_videoCall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text=" 视频呼叫" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/view_audio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <Button
+                    android:id="@+id/switch_audio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="扬声器/听筒模式切换" />
+
+                <Button
+                    android:id="@+id/mute_audio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="设置麦克静音" />
+
+                <Button
+                    android:id="@+id/mute_speaker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="设置扬声器静音" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/bt_dropCall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="结束通话" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/bt_clear"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_height="40dp"
+                android:text="清空文本" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
