@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:name=".MyApplication"
         android:theme="@style/AppTheme">
-        <activity android:name=".RengongActivity">
+        <activity android:name="com.chatUI.ChatActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
