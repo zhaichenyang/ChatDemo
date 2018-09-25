@@ -7,8 +7,6 @@ import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 
-import java.lang.reflect.Field;
-
 /**
  * Created by zhaichenyang on 2018/9/15.
  */
@@ -20,7 +18,7 @@ public class RefreshRecyclerView extends RecyclerView {
     private MRefreshHeader mRefreshHeader;
     private OnRefreshListener onRefreshListener;
     private boolean canRefreshing = false;
-    private long lastTime=0;
+    private long lastTime = 0;
 
 
     public static int REFRESH_HEADER = 95519;
@@ -52,7 +50,7 @@ public class RefreshRecyclerView extends RecyclerView {
                 startY = (int) e.getY();
                 break;
             case MotionEvent.ACTION_MOVE:
-                if(canRefresh()){
+                if (canRefresh()) {
                     int tempY = (int) e.getY();
                     int space = tempY - startY;
                     int topPadding = space - mRefreshHeader.getMeasuredHeight();
@@ -65,11 +63,10 @@ public class RefreshRecyclerView extends RecyclerView {
                 }
                 break;
             case MotionEvent.ACTION_UP:
-                long currentTime=System.currentTimeMillis();
-                if (canRefreshing) {
-                    if(currentTime-lastTime>600){
-                        lastTime=currentTime;
-                        startY = -1;
+                long currentTime = System.currentTimeMillis();
+                if (canRefreshing) {//通过canRefresh()和canRefreshing配合完成防止产生多余item
+                    if (currentTime - lastTime > 600) {
+                        lastTime = currentTime;
                         mRefreshHeader.setRefresh(true);
                         onRefreshListener.onRefresh();
                         mRefreshHeader.smoothScrollTo(0, new MRefreshHeader.MRefreshListener() {
@@ -103,6 +100,7 @@ public class RefreshRecyclerView extends RecyclerView {
         this.onRefreshListener = onRefreshListener;
     }
 
+    //判断是否在顶部
     private boolean canRefresh() {
         LinearLayoutManager mLayoutManager =
                 (LinearLayoutManager) this.getLayoutManager();
@@ -114,25 +112,11 @@ public class RefreshRecyclerView extends RecyclerView {
         }
 
     }
-
-    public void scrollGoPosition(int cur){
+    //滑动到指定的item
+    public void scrollGoPosition(int cur) {
         LinearLayoutManager mLayoutManager =
                 (LinearLayoutManager) this.getLayoutManager();
         mLayoutManager.scrollToPositionWithOffset(cur, 0);
         mLayoutManager.setStackFromEnd(true);
-    }
-
-    public void setMaxFlingVelocity(int velocity){
-        try {
-            Field field =this.getClass().getDeclaredField("mMaxFlingVelocity");
-            field.setAccessible(true);
-            field.set(this,velocity);
-        } catch (NoSuchFieldException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        }
-
-
     }
 }

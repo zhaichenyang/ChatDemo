@@ -32,8 +32,6 @@ public class MRefreshHeader {
     public MRefreshHeader(Context context) {
         rootView = LayoutInflater.from(context).inflate(R.layout.item_chathead, new LinearLayout(context), false);
         mContainer = (LinearLayout) rootView.findViewById(R.id.ll_header_content);
-//        rootView.measure(ViewGroup.LayoutParams.WRAP_CONTENT,
-//                ViewGroup.LayoutParams.WRAP_CONTENT);
         //对View进行measure，然后才能获取到其高度
         measureView();
         mMeasuredHeight = rootView.getMeasuredHeight();
@@ -120,10 +118,6 @@ public class MRefreshHeader {
 
     public void setRefresh(boolean isRefresh){
         this.isRefresh=isRefresh;
-    }
-
-    public boolean isRefresh() {
-        return isRefresh;
     }
 
     public interface MRefreshListener{

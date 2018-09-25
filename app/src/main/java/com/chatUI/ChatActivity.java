@@ -64,8 +64,6 @@ public class ChatActivity extends Activity {
             public void onRefresh() {
                 mAddData.clear();
                 mAddData.add(new ChatBean("0000", "c"));
-                mAddData.add(new ChatBean("0001", "c"));
-                mAddData.add(new ChatBean("0002", "c"));
                 mData.addAll(1, mAddData);
                 cur=mAddData.size()+1;
             }
